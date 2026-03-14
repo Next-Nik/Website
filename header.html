@@ -1,0 +1,103 @@
+<style>
+.nh-header { background: #FAF8F4; border-bottom: 1px solid rgba(200,146,42,0.22); padding: 0 32px; height: 72px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 200; max-width: 100%; box-sizing: border-box; }
+.nh-logo { display: flex; align-items: center; text-decoration: none; }
+.nh-logo img { height: 44px; width: auto; display: block; }
+.nh-nav { display: flex; align-items: center; gap: 32px; }
+.nh-nav a { font-family: 'Cormorant SC', Georgia, serif; font-size: 11px; letter-spacing: 0.16em; color: #4A4A4A; text-decoration: none; text-transform: uppercase; transition: color 0.15s; }
+.nh-nav a:hover { color: #C8922A; }
+.nh-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nh-hamburger span { display: block; width: 22px; height: 1px; background: #C8922A; transition: all 0.2s; }
+
+/* Overlay */
+.nh-overlay { display: none; position: fixed; inset: 0; background: #FAF8F4; z-index: 300; flex-direction: column; padding: 0; overflow-y: auto; }
+.nh-overlay.open { display: flex; }
+.nh-overlay-header { display: flex; align-items: center; justify-content: space-between; padding: 0 32px; height: 72px; border-bottom: 1px solid rgba(200,146,42,0.22); flex-shrink: 0; }
+.nh-overlay-header img { height: 44px; width: auto; }
+.nh-close { background: none; border: none; cursor: pointer; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 28px; color: #C8922A; line-height: 1; padding: 0; }
+.nh-overlay-body { padding: 48px 32px 64px; display: flex; flex-direction: column; gap: 40px; flex: 1; }
+.nh-overlay-group { display: flex; flex-direction: column; gap: 0; }
+.nh-overlay-group-label { font-family: 'Cormorant SC', Georgia, serif; font-size: 10px; letter-spacing: 0.2em; color: #C8922A; text-transform: uppercase; margin-bottom: 16px; }
+.nh-overlay-group a { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(22px,5vw,30px); font-weight: 300; color: #0F1523; text-decoration: none; padding: 8px 0; border-bottom: 1px solid rgba(200,146,42,0.1); display: block; transition: color 0.15s; line-height: 1.3; }
+.nh-overlay-group a:last-child { border-bottom: none; }
+.nh-overlay-group a:hover { color: #C8922A; }
+
+@media (max-width: 768px) {
+  .nh-nav { display: none; }
+  .nh-hamburger { display: flex; }
+  .nh-header { padding: 0 20px; }
+  .nh-overlay-header { padding: 0 20px; }
+  .nh-overlay-body { padding: 40px 20px 60px; }
+}
+</style>
+
+<header class="nh-header">
+  <a href="/" class="nh-logo">
+    <img src="https://raw.githubusercontent.com/Next-Nik/Website/main/logo.png" alt="NextUs">
+  </a>
+
+  <nav class="nh-nav">
+    <a href="/">Home</a>
+    <a href="/life-os">Life OS</a>
+    <a href="/work-with-nik">Work With Nik</a>
+    <a href="/podcast">Podcast</a>
+    <a href="/nextus">NextUs</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <button class="nh-hamburger" onclick="openNav()" aria-label="Open menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div class="nh-overlay" id="nh-overlay">
+  <div class="nh-overlay-header">
+    <a href="/">
+      <img src="https://raw.githubusercontent.com/Next-Nik/Website/main/logo.png" alt="NextUs">
+    </a>
+    <button class="nh-close" onclick="closeNav()">✕</button>
+  </div>
+
+  <div class="nh-overlay-body">
+
+    <div class="nh-overlay-group">
+      <div class="nh-overlay-group-label">The Ecosystem</div>
+      <a href="/">Home</a>
+      <a href="/nextus">NextUs</a>
+      <a href="/about">About</a>
+    </div>
+
+    <div class="nh-overlay-group">
+      <div class="nh-overlay-group-label">Life OS</div>
+      <a href="/foundation">Foundation</a>
+      <a href="/orienteering">Orienteering</a>
+      <a href="/purpose-piece">Purpose Piece</a>
+      <a href="/pulse">Pulse</a>
+      <a href="/horizon-leap">Horizon Leap</a>
+    </div>
+
+    <div class="nh-overlay-group">
+      <div class="nh-overlay-group-label">More</div>
+      <a href="/work-with-nik">Work With Nik</a>
+      <a href="/podcast">Podcast</a>
+      <a href="/glossary">Glossary</a>
+      <a href="/start">Start</a>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function openNav() {
+  document.getElementById('nh-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeNav() {
+  document.getElementById('nh-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeNav();
+});
+</script>
