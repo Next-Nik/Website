@@ -2,9 +2,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #FAF8F4 !important; }
 :root {
   --gold: #C8922A; --gold-line: rgba(200,146,42,0.22); --gold-faint: rgba(200,146,42,0.07);
-  --dark: #0F1523; --body: #4A4A4A; --meta: #7A7A72; --bg: #FAFAF7;
+  --dark: #0F1523; --body: #4A4A4A; --meta: #7A7A72; --bg: #FAF8F4;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --serif-sc: 'Cormorant SC', Georgia, serif;
 }
@@ -30,7 +31,7 @@ p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; ma
 .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin: 28px 0; }
 .col-block { padding: 24px 22px; }
 .col-block.not-this { background: rgba(200,146,42,0.04); border: 1px solid var(--gold-line); }
-.col-block.is-this { background: #FAFAF7; border: 1px solid var(--gold-line); border-left: 3px solid var(--gold); }
+.col-block.is-this { background: #FAF8F4; border: 1px solid var(--gold-line); border-left: 3px solid var(--gold); }
 .col-label { font-family: var(--serif-sc); font-size: 10px; letter-spacing: 0.18em; color: var(--meta); display: block; margin-bottom: 14px; }
 .col-block.is-this .col-label { color: var(--gold); }
 .col-item { font-size: 15px; color: var(--body); padding: 5px 0; border-bottom: 1px solid rgba(200,146,42,0.07); line-height: 1.5; }
@@ -45,7 +46,7 @@ p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; ma
 .for-whom ul li::before { content: "—"; position: absolute; left: 0; color: var(--gold); }
 
 /* Positioning sentence */
-.position-block { border: 1px solid var(--gold-line); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 40px 0; background: #FAFAF7; }
+.position-block { border: 1px solid var(--gold-line); border-left: 3px solid var(--gold); padding: 28px 32px; margin: 40px 0; background: #FAF8F4; }
 .position-block p { margin: 0; font-size: clamp(17px,2vw,20px); font-style: italic; color: var(--dark); }
 
 /* CTA */
