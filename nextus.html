@@ -2,9 +2,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #FAF8F4 !important; }
 :root {
   --gold: #C8922A; --gold-line: rgba(200,146,42,0.22); --gold-faint: rgba(200,146,42,0.07);
-  --dark: #0F1523; --body: #4A4A4A; --meta: #7A7A72; --bg: #FAFAF7;
+  --dark: #0F1523; --body: #4A4A4A; --meta: #7A7A72; --bg: #FAF8F4;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --serif-sc: 'Cormorant SC', Georgia, serif;
 }
@@ -26,16 +27,16 @@ p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; ma
 
 /* Three functions */
 .functions { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px; margin: 28px 0; }
-.fn { border: 1px solid var(--gold-line); border-top: 3px solid var(--gold); padding: 24px 22px 20px; background: #FAFAF7; }
+.fn { border: 1px solid var(--gold-line); border-top: 3px solid var(--gold); padding: 24px 22px 20px; background: #FAF8F4; }
 .fn-label { font-family: var(--serif-sc); font-size: 10px; letter-spacing: 0.18em; color: var(--gold); display: block; margin-bottom: 10px; }
 .fn-title { font-size: 18px; font-weight: 600; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
 .fn-desc { font-size: 15px; color: var(--meta); font-style: italic; line-height: 1.6; }
 
 /* Fractal block */
-.fractal { background: var(--dark); padding: 48px; margin: 56px 0; }
-.fractal .eyebrow { color: rgba(200,146,42,0.55); margin-bottom: 16px; }
-.fractal h2 { color: var(--gold); margin-top: 0; font-weight: 300; font-style: italic; }
-.fractal p { color: rgba(250,250,247,0.65); }
+.fractal { background: #FAF8F4; border: 1px solid var(--gold-line); border-left: 3px solid var(--gold); padding: 48px; margin: 56px 0; }
+.fractal .eyebrow { color: var(--gold); margin-bottom: 16px; }
+.fractal h2 { color: var(--dark); margin-top: 0; font-weight: 300; font-style: italic; }
+.fractal p { color: var(--body); }
 
 /* CTA */
 .cta-row { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 52px; padding-top: 44px; border-top: 1px solid var(--gold-line); align-items: center; }
@@ -90,7 +91,7 @@ p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; ma
   <div class="fractal">
     <span class="eyebrow">The fractal architecture</span>
     <h2>The same navigation physics at two scales.</h2>
-    <p>Life OS helps individuals navigate the seven domains of their own life. NextUs applies the same methodology to humanity as a whole — the same domains, the same developmental thresholds, the same orientation-before-optimisation principle.</p>
+    <p>Life OS helps individuals navigate the seven domains of their own life. NextUs applies the same framework to humanity as a whole — the same domains, the same stages of healing and development, the same orientation-before-action principle.</p>
     <p>A person who has learned to navigate their own life clearly is more capable of contributing to civilisational navigation. This is not metaphor. It is architecture.</p>
   </div>
 
@@ -100,7 +101,7 @@ p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; ma
   <p>NextUs is in active development. The personal navigation layer — Life OS — is the foundation from which the civilisational layer grows. If you're here early, you're part of what comes next.</p>
 
   <div class="cta-row">
-    <a href="/lifeos" class="cta-link">Explore Life OS →</a>
+    <a href="/life-os" class="cta-link">Explore Life OS →</a>
     <a href="/orienteering" class="cta-link">Start with Orienteering →</a>
     <span class="cta-note">The clearest next step is an honest map of your own life.</span>
   </div>
