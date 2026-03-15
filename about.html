@@ -1,251 +1,78 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cormorant+SC:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #FAF8F4 !important; }
 :root {
-  --gold: #C8922A;
-  --gold-line: rgba(200,146,42,0.22);
-  --gold-faint: rgba(200,146,42,0.07);
-  --dark: #0F1523;
-  --body: #4A4A4A;
-  --meta: #7A7A72;
-  --bg: #FAFAF7;
+  --gold: #C8922A; --gold-line: rgba(200,146,42,0.22); --gold-faint: rgba(200,146,42,0.07);
+  --dark: #0F1523; --body: #4A4A4A; --meta: #7A7A72;
   --serif: 'Cormorant Garamond', Georgia, serif;
   --serif-sc: 'Cormorant SC', Georgia, serif;
 }
-
-body { background: var(--bg); color: var(--body); font-family: var(--serif); font-size: 18px; line-height: 1.7; }
-
-/* ── SHARED ── */
-.page { max-width: 820px; margin: 0 auto; padding: 72px 32px 100px; }
+.page { max-width: 820px; margin: 0 auto; padding: 72px 32px 100px; font-family: var(--serif); font-size: 18px; line-height: 1.7; color: var(--body); }
 .eyebrow { font-family: var(--serif-sc); font-size: 11px; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; display: block; margin-bottom: 14px; }
-.page h1 { font-family: var(--serif); font-size: clamp(40px,5.5vw,64px); font-weight: 300; color: var(--gold); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 16px; }
-.page h2 { font-family: var(--serif); font-size: clamp(22px,3vw,30px); font-weight: 600; color: var(--dark); line-height: 1.25; margin: 56px 0 14px; }
-.page p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; margin-bottom: 18px; max-width: 640px; }
+h1 { font-family: var(--serif); font-size: clamp(40px,5.5vw,64px); font-weight: 300; color: var(--gold); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 16px; }
+h2 { font-family: var(--serif); font-size: clamp(22px,3vw,30px); font-weight: 600; color: var(--dark); line-height: 1.25; margin: 56px 0 14px; }
+p { font-size: clamp(16px,1.8vw,18px); color: var(--body); line-height: 1.75; margin-bottom: 18px; max-width: 640px; }
 .hero-rule { width: 56px; height: 1px; background: var(--gold); margin: 20px 0 40px; border: none; display: block; }
 .rule { border: none; border-top: 1px solid var(--gold-line); margin: 64px 0; }
 .featured { font-family: var(--serif); font-size: clamp(20px,2.6vw,26px); font-weight: 300; font-style: italic; color: var(--dark); line-height: 1.55; border-left: 3px solid var(--gold); padding: 8px 0 8px 28px; margin: 40px 0; max-width: 680px; }
-.cta-row { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 52px; padding-top: 44px; border-top: 1px solid var(--gold-line); align-items: center; }
+.values { display: grid; gap: 4px; margin: 28px 0; }
+.value { border-left: 3px solid var(--gold-line); padding: 14px 0 14px 24px; }
+.value strong { display: block; font-family: var(--serif-sc); font-size: 11px; letter-spacing: 0.14em; color: var(--gold); margin-bottom: 4px; }
+.value p { margin: 0; font-size: 16px; font-style: italic; color: var(--meta); }
+.cta-row { display: flex; flex-wrap: wrap; gap: 32px; margin-top: 52px; padding-top: 44px; border-top: 1px solid var(--gold-line); }
 .cta-link { font-family: var(--serif-sc); font-size: 12px; letter-spacing: 0.16em; color: var(--gold); text-decoration: none; border-bottom: 1px solid rgba(200,146,42,0.35); padding-bottom: 3px; }
-
-/* ── SECTION DIVIDER ── */
-.section-divider { max-width: 820px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; gap: 24px; }
-.section-divider::before,
-.section-divider::after { content: ''; flex: 1; height: 1px; background: var(--gold-line); }
-.section-divider-mark { width: 6px; height: 6px; border: 1px solid var(--gold); transform: rotate(45deg); flex-shrink: 0; }
-
-/* ── NEXTUS SECTION — left-aligned ── */
-.nextus-section { background: var(--bg); }
-
-.fractal-note { border-left: 3px solid var(--gold); padding: 18px 0 18px 28px; margin: 40px 0; }
-.fractal-note p { margin: 0; font-size: clamp(16px,1.8vw,18px); font-style: italic; color: var(--dark); }
-
-.tools-list { margin: 28px 0; }
-.tool-row { display: flex; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(200,146,42,0.09); align-items: baseline; }
-.tool-row:last-child { border-bottom: none; }
-.tool-name { font-family: var(--serif-sc); font-size: 11px; letter-spacing: 0.14em; color: var(--gold); min-width: 160px; flex-shrink: 0; }
-.tool-desc { font-size: clamp(15px,1.6vw,16px); font-style: italic; color: var(--meta); line-height: 1.6; }
-
-/* ── NIK SECTION — mirrored right-aligned, overrides global !important ── */
-.nik-section { background: var(--bg); }
-.nik-section .page { text-align: right !important; }
-.nik-section .page p { text-align: right !important; margin-left: auto !important; margin-right: 0 !important; }
-.nik-section .page h1 { text-align: right !important; }
-.nik-section .page h2 { text-align: right !important; }
-.nik-section .eyebrow { text-align: right !important; }
-.nik-section .hero-rule { margin: 20px 0 40px auto !important; }
-.nik-section .rule { margin: 64px 0; }
-
-.nik-section .featured {
-  border-left: none !important;
-  border-right: 3px solid var(--gold);
-  padding: 8px 28px 8px 0 !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
-  text-align: right !important;
-}
-
-.nik-section .fractal-note {
-  border-left: none !important;
-  border-right: 3px solid var(--gold);
-  padding: 18px 28px 18px 0;
-  text-align: right !important;
-  margin-left: auto;
-}
-.nik-section .fractal-note p { text-align: right !important; }
-
-.nik-section .cta-row { justify-content: flex-end; text-align: right !important; }
-
-.nik-section .page blockquote {
-  border-left: none !important;
-  border-right: 3px solid var(--gold);
-  padding: 6px 24px 6px 0 !important;
-  margin-left: auto !important;
-  text-align: right !important;
-  font-style: italic;
-  color: var(--body);
-  font-size: clamp(16px,1.8vw,18px);
-  line-height: 1.7;
-  max-width: 640px;
-}
-
-.nik-sign-off {
-  font-family: var(--serif);
-  font-size: clamp(18px,2.2vw,22px);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--dark);
-  margin: 44px 0 8px;
-  text-align: right !important;
-  display: block;
-}
-
-.more-coming {
-  font-family: var(--serif-sc);
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  text-align: right !important;
-  margin: 32px 0;
-  display: block;
-}
-
-@media (max-width: 600px) {
-  .page { padding: 44px 20px 76px; }
-  .tool-row { flex-direction: column; gap: 4px; }
-  .tool-name { min-width: auto; }
-  .cta-row { flex-direction: column; gap: 22px; }
-}
+@media (max-width: 600px) { .page { padding: 44px 20px 76px; } }
 </style>
 
-<!-- ═══════════════════════════════════════════
-     SECTION ONE — NEXTUS / THE WORK
-     Macro to micro. Left-aligned.
-════════════════════════════════════════════ -->
-<div class="nextus-section">
 <div class="page">
 
-  <span class="eyebrow">NextUs · Life OS</span>
-  <h1>A life worth living,<br>a future worth building.</h1>
+  <span class="eyebrow">About</span>
+  <h1>Nik Wood.</h1>
   <hr class="hero-rule">
 
-  <p>NextUs is dedicated to living into a future where individuals are living on purpose — clear about who they are, where they are headed, and what they are here to contribute. Where a critical mass of people are oriented towards horizon goals where they and the planet co-thrive. Where that clarity compounds into something larger than any one life.</p>
-  <p>That is what this ecosystem is designed to produce. At two scales.</p>
+  <p>Since 2015, Nik has been working at the intersection of personal development and civilisational navigation — first through the Life Athletics Podcast, now through the NextUs ecosystem.</p>
+  <p>The work began with a simple observation: most people are not lost. They are unoriented. There is a difference — and the difference changes everything about what kind of attention actually moves a life forward.</p>
+  <p>Over ten years, that observation became a framework. The framework became tools. The tools became a platform.</p>
+
+  <div class="featured">A life worth living, a future worth building.</div>
 
   <hr class="rule">
 
-  <h2>At the civilisational scale — NextUs.</h2>
-
-  <p>Across the world, people are already working toward the future we want to build. In every domain — health, ecology, governance, education, economy, community, technology — committed individuals, organisations, and projects are making real progress.</p>
-  <p>NextUs creates a shared map of those efforts. Organised by domain, location, and scale, the platform makes the landscape of humanity's horizon goals visible — so we can see where meaningful progress is happening, where the gaps are, and where new effort is most needed. When the work becomes visible, coordination becomes possible. When coordination is possible, momentum builds.</p>
+  <h2>The longer arc.</h2>
+  <p>In 2019, Nik broke his skull. What followed — recovery, cancer, the loss of his mother, and the loss of the friend who had saved his life — was not a detour from the work. It was the work, lived at full intensity.</p>
+  <p>What came out the other side wasn't a new product line. It was a fundamentally different understanding of what this work is for — and the scale it needs to operate at.</p>
+  <p>The podcast went quiet for seven years. The ecosystem was being built.</p>
+  <p>NextUs is the result. Not a rebranding. An evolution — from helping individuals navigate their lives, to building the infrastructure for humanity to navigate its future.</p>
 
   <hr class="rule">
 
-  <h2>At the personal scale — NextUs: Life OS.</h2>
+  <h2>What drives this.</h2>
+  <p>Humanity as a whole is mostly operating the way a person operates when they have no clear direction and are carrying unresolved trauma — because that's mostly what humanity is made of.</p>
+  <p>That's the starting point, not the verdict. There are tools that work at every stage of development. The work is matching the right one to the right stage — and then moving on from there.</p>
+  <p>Life on earth and humanity could be genuinely thriving, if that's what we individually and collectively aimed ourselves at.</p>
 
-  <p>Life OS helps individuals navigate the key domains of their lives with clarity, direction, and integrity. It maps seven areas — Path, Spark, Body, Finances, Relationships, Inner Game, Outer Game — and provides tools for seeing where you actually are, understanding what you're here to contribute, and moving forward with intention.</p>
-  <p>Most people who find their way here are capable and self-aware. They are not lost. They are unoriented — and they know the difference. Something isn't moving the way it should, and they are ready to find out why.</p>
-  <p>Life OS doesn't tell you what to do. It helps you see clearly enough to choose.</p>
+  <hr class="rule">
 
-  <div class="fractal-note">
-    <p>The same navigation physics that move one life move a civilisation. Life OS and NextUs are not separate projects. They are the same architecture at two scales. A person who has learned to navigate their own life clearly is more capable of contributing to the larger work. That is the design.</p>
+  <h2>Values.</h2>
+  <div class="values">
+    <div class="value"><strong>Nikhedonia</strong><p>The particular joy that comes from watching others thrive.</p></div>
+    <div class="value"><strong>Ubuntu</strong><p>I am because we are. In the spirit of Mandela.</p></div>
+    <div class="value"><strong>Wonderment</strong><p>The capacity to be genuinely astonished by what is.</p></div>
+    <div class="value"><strong>Dymaxion</strong><p>Maximum output from minimum input. In the spirit of Buckminster Fuller.</p></div>
+    <div class="value"><strong>Excelsior</strong><p>Ever upward. In the spirit of Stan Lee.</p></div>
+    <div class="value"><strong>Enthusiasmos</strong><p>To be filled with the divine. The animating fire.</p></div>
+    <div class="value"><strong>Wabi Sabi</strong><p>The beauty of imperfection, impermanence, and incompleteness.</p></div>
+    <div class="value"><strong>Melorism</strong><p>The world can be made better through human effort. The belief beneath all of this.</p></div>
   </div>
 
   <hr class="rule">
-
-  <h2>The tools.</h2>
-  <p>Each tool addresses a specific state or step of development. Wherever you are in the sequence, there is a clear next step.</p>
-
-  <div class="tools-list">
-    <div class="tool-row">
-      <span class="tool-name">Foundation</span>
-      <span class="tool-desc">The nervous system layer. Capacity before content — the floor that makes everything else sustainable.</span>
-    </div>
-    <div class="tool-row">
-      <span class="tool-name">Orienteering</span>
-      <span class="tool-desc">A diagnostic map across all seven domains of life. Where you actually are, honestly placed.</span>
-    </div>
-    <div class="tool-row">
-      <span class="tool-name">Purpose Piece</span>
-      <span class="tool-desc">The pattern beneath how you're naturally built to contribute. Not a personality test — recognition.</span>
-    </div>
-    <div class="tool-row">
-      <span class="tool-name">Pulse</span>
-      <span class="tool-desc">The ongoing practice that keeps your map current. Clarity maintained over time, not arrived at once.</span>
-    </div>
-    <div class="tool-row">
-      <span class="tool-name">Horizon Leap</span>
-      <span class="tool-desc">A guided crossing for people ready to change not just what they do, but who they are. The moment when insight becomes identity.</span>
-    </div>
-  </div>
-
-  <div class="cta-row">
-    <a href="/start" class="cta-link">Find your entry point →</a>
-    <a href="/lifeos" class="cta-link">Explore Life OS →</a>
-  </div>
-
-</div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     SECTION DIVIDER
-════════════════════════════════════════════ -->
-<div style="padding: 64px 0;">
-  <div class="section-divider">
-    <div class="section-divider-mark"></div>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════
-     SECTION TWO — NIK
-     Personal. Right-aligned. Mirrored.
-════════════════════════════════════════════ -->
-<div class="nik-section">
-<div class="page">
-
-  <span class="eyebrow">Nik Wood · Founder</span>
-  <h1>The person<br>behind the work.</h1>
-  <hr class="hero-rule">
-
-  <p>I've been at this for a while. My mother was a naturopathic doctor, a shaman, and an adventurer. She surrounded me with healers, teachers, and practitioners — people who understood that the work of becoming a full human being was serious, worth doing, and worth doing well.</p>
-  <p>I started training formally as a teenager — NLP, hypnotherapy, Timeline Therapy — while most of my peers were still figuring out what they wanted to do with their lives. I was trying to understand how transformation actually worked. Not as a concept. As a lived process.</p>
-  <p>Eventually, people started noticing a shift in me. They asked if I could help them find it for themselves. That's how the work started. I've been doing this ever since.</p>
-
-  <hr class="rule">
-
-  <h2>What the work actually is.</h2>
-
-  <p>The people who find their way to this work are typically capable and self-aware — often already successful by external measures. What they bring is something more specific: they can see the life they want, and they feel a persistent distance from it. They know what they should be doing. They're not doing it. They've done the inner work and hit a ceiling they can't quite name.</p>
-  <p>That gap is rarely about strategy. It's about identity — the distance between who someone is right now and who they are becoming.</p>
-  <p>I help people close that gap. I hold a frame that keeps the vision of their Horizon Self upright — the fully expressed version of who they already are — until they can hold it steadily themselves. It doesn't fit neatly into coaching, therapy, or consulting. It's a particular kind of witnessing: seeing what's already there before the person can hold it, and staying present with that vision across time.</p>
-
-  <blockquote>BK had been running his business for eighteen months. It had flatlined. Through our work together, we found what was underneath it — a belief, planted by someone else, that success in his field meant taking advantage of people. His subconscious had decided that if he succeeded, he'd become someone he wasn't okay with being. Once he could see that clearly, something unlocked. The business moved. Significantly. But more than that — he met his now-fiancée, built his dream house, and found his way into a life he'd stopped believing was available to him. That kind of result isn't about me. It's about what becomes possible when someone can finally see themselves clearly.</blockquote>
-
-  <hr class="rule">
-
-  <h2>The years that changed everything.</h2>
-
-  <div class="featured">The Life Athletics Podcast launched in 2015. For years, long-form conversations about navigating a life worth living. Then I was literally cracked open — and I went through the very terrain I had been helping others find their way through.</div>
-
-  <p>2019 to now have been filled with challenging life moments that shifted how I think and who I am. First, a skull fracture — a freak accident at a wellness workshop — cracked me open in ways beyond just the bone. A few years later my mother died. Then I was diagnosed with cancer and operated on. Then the death of one of my best friends, the guy who had saved my life when I broke my skull.</p>
-  <p>All of this had me face death and life through a new lens.</p>
-  <p>These weren't separate events. They were a sequence — a dismantling that required me to navigate, genuinely and without performance, everything this work is designed for. I've spoken publicly about the fracture. The rest I've held more quietly. I name them here not as disclosure, but as context. What came out of those years wasn't a return to what I was building before. It was a fractal expansion of it. I started to see personal development as a key part of civilisational development and vice versa.</p>
-
-  <span class="more-coming">More is coming.</span>
-
-  <hr class="rule">
-
-  <p>The podcast relaunched in 2024 as NextUs — 222 episodes across ten years, two eras, one continuous inquiry. The ecosystem is live and growing. The first NextMen cohort launches in Mexico City.</p>
-  <p>If you want to understand the work, the best place to start is Orienteering — an honest map of where you actually are across all seven domains. From there, everything else becomes navigable.</p>
-  <p>If you want to work with me directly, <a href="CONTACT_LINK" class="cta-link">reach out</a>.</p>
-
-  <span class="nik-sign-off">A life worth living, a future worth building.</span>
 
   <div class="cta-row">
     <a href="/work-with-nik" class="cta-link">Work directly with Nik →</a>
-    <a href="/podcast" class="cta-link">Listen to the podcast →</a>
+    <a href="/nextus" class="cta-link">Learn about NextUs →</a>
+    <a href="/podcast" class="cta-link">Browse the podcast →</a>
   </div>
 
-</div>
 </div>
